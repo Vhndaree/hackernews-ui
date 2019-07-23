@@ -1,0 +1,124 @@
+@import url('https://fonts.googleapis.com/css?family=Ewert&display=swap');
+@import url('https://fonts.googleapis.com/css?family=Khand&display=swap');
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
+}
+
+header {
+  background-color: #242621;
+  position: fixed;
+  width: 100%;
+  top: 0;
+}
+
+header .header-wrapper {
+  max-width: 69.25em;
+  margin: 0 auto;
+}
+
+header h1 {
+  font-family: 'Ewert', cursive;
+  color: #fff;
+  line-height: 40px;
+  font-size: 20px;
+  text-align: center;
+}
+
+.search-field {
+  width: 100%;
+  position: relative;
+}
+
+.search-field input[type=text] {
+  font-family: 'Khand', sans-serif;
+  font-size: 18px;
+  vertical-align: middle;
+  background-color: rgba(126, 130, 136, 0.4);
+  border: none;
+  padding-left: 10px;
+  padding-right: 21px;
+  height: 30px;
+  width: 95%;
+  padding-top: 5px;
+  border-radius: 10px;
+  margin: 0 0 5px 8px;
+}
+
+.search-field .fa.fa-search {
+  position: absolute;
+  top: 7px;
+  right: 12px;
+  color: #a0a0a0;
+}
+
+.news-list-wrapper {
+  background-color: #ded5d6;
+}
+
+.news-list {
+  padding-left: 8px;
+  padding-right: 8px;
+  padding-top: 80px;
+  max-width: 69.25em;
+  margin: 0 auto;
+}
+
+.news-item {
+  text-align: center;
+  line-height: 20px;
+  margin-bottom: 2px;
+  background-color: #2e2828;
+  font-family: 'Khand', sans-serif;
+  color: #fff;
+  text-transform: capitalize;
+  border-radius: 5px;
+  padding: 10px 5px;
+}
+
+.title {
+  font-size: 16px;
+  font-weight: 600;
+  display: block;
+}
+
+.author, .time {
+  font-size: 12px;
+}
+
+@media only screen and (min-width: 768px) {
+
+  header h1 {
+    float: left;
+    line-height: 70px;
+    font-size: 30px;
+    margin-left: 8px;
+  }
+
+  .search-field {
+    float: right; 
+    width: 40%;
+    line-height: 70px;
+    position: relative;
+  }
+
+  .search-field .fa.fa-search {
+    top: 25px;
+    right: 12px;
+  }
+  
+}
+
+@media only screen and (min-width: 1108px) {
+
+  .search-field .fa.fa-search {
+    right: 20px;
+  }
+
+}

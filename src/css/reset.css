@@ -1,0 +1,23 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.clear-fix::after {
+  content: "";
+  display: block;
+  clear: both;
+}
+
+input, checkbox, select {
+  outline: none;
+}
+
+ul li {
+  list-style-type: none;
+}
+
+::placeholder {
+  color: #000;
+}
