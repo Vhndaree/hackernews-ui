@@ -8,34 +8,40 @@ class Posts extends React.Component {
     news: [],
   };
 
-  componentDidMount() {
-    fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
-      .then(response => response.json())
-      .then(data => {
-        data.map(newsId => {
-          this.getNews(newsId);
-        });
-      });
+  async componentDidMount() {
+    // fetch('https://hacker-news.firebaseio.com/v0/topstories.json')
+    //   .then(response => response.json())
+    //   .then(data => {
+    //     data.map(newsId => {
+    //       this.getNews(newsId);
+    //     });
+    //   });
+    //  () => {
+
+    // })()
+    let api = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
+    let data = await api.json();
+    data.slice(0, 20).map(newsId => {
+      this.getNews(newsId);
+    })
   }
 
-  getNews = (newsId) => {
-    fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json')
-      .then(response => response.json())
-      .then(data => {
-        const newNews = {
-          by: data.by,
-          descendants: data.descendants,
-          id: data.id,
-          kids: data.kids,
-          score: data.score,
-          time: data.time,
-          title: data.title,
-          type: data.type,
-          url: data.url,
-        }
+  getNews = async (newsId) => {
+    let api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json');
+    let data = await api.json();
+    const newNews = await {
+      by: data.by,
+      descendants: data.descendants,
+      id: data.id,
+      kids: data.kids,
+      score: data.score,
+      time: data.time,
+      title: data.title,
+      type: data.type,
+      url: data.url,
+    }
 
-        this.addToNews(newNews);
-      });
+    this.addToNews(newNews);
   }
 
   addToNews = (newNews) => {

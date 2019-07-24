@@ -4,13 +4,14 @@ import { Link } from 'react-router-dom';
 class NewsItem extends React.Component {
 
   render() {
-    const { by, time, title } = this.props.newsItem;
+    const { id, by, time, title } = this.props.newsItem;
     return (
       <li className='news-item'>
         <span className='title'>
           <Link
             to={{
-              pathname: '/Stories',
+              pathname: '/stories/' + id ,
+              state: { data: this.props.newsItem },
             }}
           >
             {title}
