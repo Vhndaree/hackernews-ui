@@ -4,6 +4,11 @@
   box-sizing: border-box;
 }
 
+a, a:active, a:visited {
+  text-decoration: none;
+  color: rgb(92, 140, 241);
+}
+
 .clear-fix::after {
   content: "";
   display: block;

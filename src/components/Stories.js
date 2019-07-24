@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 
 import Posts from './Posts';
 class Stories extends React.Component {
@@ -37,12 +38,29 @@ class Stories extends React.Component {
   render() {
     return (
       <>
-        <Posts />
         <div className="story-wrapper" style={{ height: window.screen.availHeight + 'px' }}>
           <ul className="modal story-modal" style={{ height: window.screen.availHeight / 1.5 + 'px' }}>
-          {this.props.location.state.data.title}
-            {this.state.stories.slice(0,2).map(story => (
-              <li key={story.id}><div dangerouslySetInnerHTML={{__html: story.text}} /></li>
+            <div className="story-title-wrapper">
+              <span className="story-title">
+                <a href={this.props.location.state.data.url} target='_blank'>
+                  {this.props.location.state.data.title}
+                </a>
+              </span>
+            </div>
+            <Link
+              to={{
+                pathname: '/',
+              }}
+            >
+              <i class="fa fa-times" aria-hidden="true"></i>
+            </Link>
+
+            {this.state.stories.slice(0, 2).map(story => (
+              <li key={story.id}>
+                <div dangerouslySetInnerHTML={{ __html: story.text }} />
+                <span className='author'>{'Author: ' + story.by + ' | '}</span>
+                <span className='time'>{'Published on: ' + new Date(story.time).toLocaleString()}</span>
+              </li>
             ))}
           </ul>
         </div>
@@ -51,5 +69,4 @@ class Stories extends React.Component {
   }
 }
 
-// export default withRouter(Stories);
 export default Stories;

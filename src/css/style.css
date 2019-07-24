@@ -88,6 +88,11 @@ header h1 {
   display: block;
 }
 
+.title:hover a {
+  color: rgb(85, 85, 233);
+  text-decoration: underline;
+}
+
 .author, .time {
   font-size: 12px;
 }
@@ -110,7 +115,53 @@ header h1 {
   transform: translate(-50%, -50%);
   overflow-y: auto;
 }
-/* <div className="modal story-modal"> */
+
+.story-modal li {
+  width: 99%;
+  margin-left: 1%;
+  margin-top: 1%;
+  padding-left: 1%;
+  margin-bottom: 1%;
+  border: 1px solid black;
+  border-right: none;
+}
+
+
+.story-title-wrapper {
+  background-color: #242621;
+  text-align: center;
+}
+
+.story-title-wrapper .story-title {
+  font-size: 20px;
+}
+
+.story-title-wrapper .story-title:hover a{
+  color: rgb(85, 85, 233);
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.story-modal .fa {
+  position: fixed;  
+  right: 15px;
+  top: 13px;
+  background: rgb(185, 12, 12);
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.story-modal .fa:hover {
+  background: rgb(248, 28, 28);
+}
+
+.story-title {
+  line-height: 50px;
+  text-align: center;
+  color: #f0f2f7;
+}
 
 @media only screen and (min-width: 768px) {
 
