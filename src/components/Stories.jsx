@@ -19,7 +19,7 @@ class Stories extends React.Component {
     return (
       <>
         <div className="story-wrapper" style={{ height: window.screen.availHeight + 'px' }}>
-          <ul className="modal story-modal" style={{ height: window.screen.availHeight / 1.5 + 'px' }}>
+          <ul className="modal story-modal" style={{ height: window.screen.availHeight / 1.2 + 'px' }}>
             <div className="story-title-wrapper">
               <span className="story-title">
                 <a href={(this.props.location.state.data.url !== '' || this.props.location.state.data.url !== null) ? this.props.location.state.data.url : '#'} target='_blank'>

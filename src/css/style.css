@@ -110,8 +110,8 @@ header h1 {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 70%;
-  background-color: #f0f2f7;  
+  width: 100%;
+  background-color: #f0f2f7;
   transform: translate(-50%, -50%);
   overflow-y: auto;
 }
@@ -134,11 +134,11 @@ header h1 {
   border-left: 2px solid rgb(71, 5, 5);
 }
 
-.story-modal .decendants .story {  
+.story-modal .decendants .story {
   border: none;
 }
 
-.story-modal .decendants:hover {  
+.story-modal .decendants:hover {
   border-left: 2px solid rgb(23, 85, 255);
 }
 
@@ -151,14 +151,14 @@ header h1 {
   font-size: 20px;
 }
 
-.story-title-wrapper .story-title:hover a{
+.story-title-wrapper .story-title:hover a {
   color: rgb(85, 85, 233);
   text-decoration: underline;
   cursor: pointer;
 }
 
 .story-modal .fa {
-  position: fixed;  
+  position: fixed;
   right: 15px;
   top: 13px;
   background: rgb(185, 12, 12);
@@ -173,38 +173,38 @@ header h1 {
 }
 
 .story-title {
-  line-height: 50px;
+  line-height: 20px;
   text-align: center;
   color: #f0f2f7;
 }
 
 @media only screen and (min-width: 768px) {
-
   header h1 {
     float: left;
     line-height: 70px;
     font-size: 30px;
     margin-left: 8px;
   }
-
   .search-field {
-    float: right; 
+    float: right;
     width: 40%;
     line-height: 70px;
     position: relative;
   }
-
   .search-field .fa.fa-search {
     top: 25px;
     right: 12px;
   }
-  
+  .story-modal {
+    width: 90%;
+  }
+  .story-title {
+    line-height: 50px;
+  }
 }
 
 @media only screen and (min-width: 1108px) {
-
   .search-field .fa.fa-search {
     right: 20px;
   }
-
 }

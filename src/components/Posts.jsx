@@ -22,7 +22,7 @@ class Posts extends React.Component {
     let api = await fetch('https://hacker-news.firebaseio.com/v0/topstories.json');
     let data = await api.json();
     data.slice(0, 20).map(newsId => {
-      this.getNews(newsId);
+      if (newsId !== null || newsId!== 'undefined') this.getNews(newsId);
     })
   }
 
@@ -30,14 +30,15 @@ class Posts extends React.Component {
     let api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json');
     let data = await api.json();
 
-    this.setState({ news: [...this.state.news, data] });
+    // this.setState({ news: [...this.state.news, data] });
+    this.props.addToState(data);
   }
 
   render() {
     return (
       <div className='news-list-wrapper'>
         <ul className='news-list'>
-          {this.state.news.map(news => (
+          {this.props.displayData.map(news => (
             <NewsItem
               newsItem={news}
               key={news.id}
