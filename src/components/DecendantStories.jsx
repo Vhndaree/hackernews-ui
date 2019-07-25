@@ -28,7 +28,6 @@ class DecendantStories extends React.Component {
   }
 
   render() {
-    console.log(this.state.data)
     return (
       <>
         <li className='story'>

@@ -12,7 +12,11 @@ class Stories extends React.Component {
   componentDidMount() {
     const storyIds = this.props.location.state.data.kids || [];
 
-    this.setState({stories: storyIds})
+    this.setState({ stories: storyIds })
+  }
+
+  goBack = () => {
+    this.props.history.goBack();
   }
 
   render() {
@@ -27,13 +31,9 @@ class Stories extends React.Component {
                 </a>
               </span>
             </div>
-            <Link
-              to={{
-                pathname: '/',
-              }}
-            >
+            <button onClick={this.goBack}>
               <i className="fa fa-times" aria-hidden="true"></i>
-            </Link>
+            </button>
 
             {this.state.stories.map((storyId, key) => (
               <DecendantStories key={key} storyId={storyId} />
