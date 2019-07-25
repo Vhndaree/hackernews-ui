@@ -12,18 +12,18 @@ class Posts extends React.Component {
     this.props.displayData.map(async newsId => {
       let api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json');
       let data = await api.json();
-      this.setState({ news: [...this.state.news,data] });
+      this.setState({ news: [...this.state.news, data] });
     });
   }
 
   componentDidUpdate(prevProps, prevState) {
 
-    if (prevProps.displayData !== this.props.displayData) {      
-      this.setState({news: []});
+    if (prevProps.displayData !== this.props.displayData) {
+      this.setState({ news: [] });
       this.props.displayData.map(async newsId => {
         let api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json');
         let data = await api.json();
-        this.setState({ news: [...this.state.news,data] });
+        this.setState({ news: [...this.state.news, data] });
       });
     }
   }

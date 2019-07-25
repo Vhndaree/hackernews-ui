@@ -188,6 +188,11 @@ header .paginate .page-number {
   cursor: pointer;
 }
 
+.loader-icon {
+  font-size: 10px;
+  text-align: center;
+}
+
 .button {
   position: fixed;
   z-index: 5;
@@ -200,7 +205,7 @@ header .paginate .page-number {
   cursor: pointer;
 }
 
-.story-modal .fa:hover {
+button:hover {
   background: rgb(248, 28, 28);
 }
 

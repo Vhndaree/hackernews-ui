@@ -30,8 +30,12 @@ class DecendantStories extends React.Component {
 
   render() {
     if (!this.state.isLoaded || this.state.data.by === 'undefined') {
-      return(
-        <></>
+      return (
+        <>
+          <li className='loader-icon'>
+            <i className="fa fa-spinner fa-pulse fa-3x fa-fw"></i>
+          </li>
+        </>
       )
     }
 
