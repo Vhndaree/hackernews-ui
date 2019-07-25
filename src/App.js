@@ -8,6 +8,10 @@ import Posts from './components/Posts';
 import Story from './components/Stories';
 
 class App extends React.Component {
+  state = {
+    news: [],
+    searchedNews: [],
+  };
   render() {
     return (
       <>

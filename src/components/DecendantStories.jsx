@@ -31,7 +31,7 @@ class DecendantStories extends React.Component {
     console.log(this.state.data)
     return (
       <>
-        <li>
+        <li className='story'>
           <div dangerouslySetInnerHTML={{ __html: this.state.data.text }} />
           <span className='author'>{'comment by: ' + this.state.data.by + ' | '}</span>
           <span className='time'>{'Published on: ' + new Date(this.state.data.time).toLocaleString()}</span>

@@ -6,10 +6,10 @@ class Header extends React.Component {
       <header>
         <div className="header-wrapper">
           <h1>The Hacker News</h1>
-          {/* <div className="search-field">
+          <div className="search-field">
             <input type="text" placeholder="SEARCH" />
             <i className="fa fa-search" aria-hidden="true"></i>
-          </div> */}
+          </div>
         </div>
       </header>
     );
