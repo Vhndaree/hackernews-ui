@@ -4,13 +4,14 @@ class DecendantStories extends React.Component {
 
   state = {
     data: {},
+    isLoaded: false,
   }
 
   async componentDidMount() {
     const api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + this.props.storyId + '.json');
     let data = await api.json();
 
-    this.setState({ data : data});
+    this.setState({ data: data, isLoaded: true });
   }
 
   displayDecendantStories = (kids) => {
@@ -28,6 +29,12 @@ class DecendantStories extends React.Component {
   }
 
   render() {
+    if (!this.state.isLoaded || this.state.data.by === 'undefined') {
+      return(
+        <></>
+      )
+    }
+
     return (
       <>
         <li className='story'>

@@ -19,10 +19,17 @@ class Stories extends React.Component {
     this.props.history.goBack();
   }
 
+  goBackOnOuterDivCLick = (e) => {
+
+    if(e.target.className === 'story-wrapper') {
+      this.goBack();
+    }
+  }
+
   render() {
     return (
       <>
-        <div className="story-wrapper" style={{ height: window.screen.availHeight + 'px' }}>
+        <div className="story-wrapper" onClick={this.goBackOnOuterDivCLick}>
           <ul className="modal story-modal" style={{ height: window.screen.availHeight / 1.2 + 'px' }}>
             <div className="story-title-wrapper">
               <span className="story-title">
