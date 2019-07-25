@@ -29,23 +29,8 @@ class Posts extends React.Component {
   getNews = async (newsId) => {
     let api = await fetch('https://hacker-news.firebaseio.com/v0/item/' + newsId + '.json');
     let data = await api.json();
-    const newNews = await {
-      by: data.by,
-      descendants: data.descendants,
-      id: data.id,
-      kids: data.kids,
-      score: data.score,
-      time: data.time,
-      title: data.title,
-      type: data.type,
-      url: data.url,
-    }
 
-    this.addToNews(newNews);
-  }
-
-  addToNews = (newNews) => {
-    this.setState({ news: [...this.state.news, newNews] });
+    this.setState({ news: [...this.state.news, data] });
   }
 
   render() {

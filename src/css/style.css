@@ -126,6 +126,16 @@ header h1 {
   border-right: none;
 }
 
+.story-modal .decendants, .story-modal .decendants li{
+  width: 99%;
+  margin-left: 1%;
+  /* margin-top: 1%; */
+  padding-left: 1%;
+  /* margin-bottom: 1%; */
+  border: none;
+  border-left: 2px solid rgb(71, 5, 5);
+}
+
 
 .story-title-wrapper {
   background-color: #242621;
