@@ -16,6 +16,7 @@ header {
   position: fixed;
   width: 100%;
   top: 0;
+  padding: 0 10px;
 }
 
 header .header-wrapper {
@@ -28,7 +29,35 @@ header h1 {
   color: #fff;
   line-height: 40px;
   font-size: 20px;
-  text-align: center;
+  /* text-align: center; */
+  float: left;
+}
+
+header .paginate {
+  line-height: 40px;
+  font-size: 16px;
+  float: right;
+}
+
+header .paginate {
+  line-height: 40px;
+  float: right;
+}
+
+header .paginate button {
+  background-color: rgb(65, 20, 224);
+  border: none;
+  cursor: pointer;
+  /* margin: 0 10px; */
+  padding: 2px 5px;
+  border-radius: 50%;
+}
+
+header .paginate .page-number {
+  background-color: rgb(159, 146, 204);
+  padding: 0 5px;
+  margin: 0 5px;
+  border-radius: 20%;
 }
 
 .search-field {
@@ -65,7 +94,7 @@ header h1 {
 .news-list {
   padding-left: 8px;
   padding-right: 8px;
-  padding-top: 80px;
+  padding-top: 43px;
   max-width: 69.25em;
   margin: 0 auto;
 }
@@ -120,9 +149,12 @@ header h1 {
 .story-modal li {
   width: 99%;
   margin-left: 1%;
-  /* margin-top: 1%; */
   border: 1px solid black;
   border-right: none;
+}
+
+.story-modal .story {
+  margin-top: 1%;
 }
 
 .story-modal .decendants {
@@ -156,13 +188,14 @@ header h1 {
   cursor: pointer;
 }
 
-.story-modal .fa {
+.button {
   position: fixed;
-  right: 15px;
-  top: 13px;
+  z-index: 5;
+  right: 8%;
+  top: 33px;
   background: rgb(185, 12, 12);
-  border-radius: 50%;
-  padding: 5px;
+  border-radius: 60%;
+  padding: 5px 8px;
   color: white;
   cursor: pointer;
 }
@@ -193,6 +226,12 @@ header h1 {
   .search-field .fa.fa-search {
     top: 25px;
     right: 12px;
+  }
+  .news-list {
+    padding-top: 72px;
+  }
+  header .paginate {
+    line-height: 70px;
   }
   .story-modal {
     width: 90%;

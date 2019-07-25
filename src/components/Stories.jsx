@@ -1,7 +1,4 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
-
-import Posts from './Posts';
 import DecendantStories from './DecendantStories';
 class Stories extends React.Component {
 
@@ -21,7 +18,7 @@ class Stories extends React.Component {
 
   goBackOnOuterDivCLick = (e) => {
 
-    if(e.target.className === 'story-wrapper') {
+    if (e.target.className === 'story-wrapper') {
       this.goBack();
     }
   }
@@ -29,6 +26,10 @@ class Stories extends React.Component {
   render() {
     return (
       <>
+
+        <button className='button' onClick={this.goBack}>
+          <i className="fa fa-times" aria-hidden="true"></i>
+        </button>
         <div className="story-wrapper" onClick={this.goBackOnOuterDivCLick}>
           <ul className="modal story-modal" style={{ height: window.screen.availHeight / 1.2 + 'px' }}>
             <div className="story-title-wrapper">
@@ -38,9 +39,6 @@ class Stories extends React.Component {
                 </a>
               </span>
             </div>
-            <button onClick={this.goBack}>
-              <i className="fa fa-times" aria-hidden="true"></i>
-            </button>
 
             {this.state.stories.map((storyId, key) => (
               <DecendantStories key={key} storyId={storyId} />
