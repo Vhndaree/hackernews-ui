@@ -29,7 +29,7 @@ class DecendantStories extends React.Component {
   }
 
   render() {
-    if (!this.state.isLoaded || this.state.data.by === 'undefined') {
+    if (!this.state.isLoaded) {
       return (
         <>
           <li className='loader-icon'>
@@ -44,7 +44,7 @@ class DecendantStories extends React.Component {
         <li className='story'>
           <div dangerouslySetInnerHTML={{ __html: this.state.data.text }} />
           <span className='author'>{'comment by: ' + this.state.data.by + ' | '}</span>
-          <span className='time'>{'Published on: ' + new Date(this.state.data.time).toLocaleString()}</span>
+          <span className='time'>{'Published on: ' + new Date(this.state.data.time*1000).toLocaleString()}</span>
         </li>
         {this.displayDecendantStories(this.state.data.kids)}
       </>

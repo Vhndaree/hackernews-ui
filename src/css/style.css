@@ -169,6 +169,10 @@ header .paginate .page-number {
   border: none;
 }
 
+.story-modal .decendants .story div{
+  word-wrap: break-word;  
+}
+
 .story-modal .decendants:hover {
   border-left: 2px solid rgb(23, 85, 255);
 }

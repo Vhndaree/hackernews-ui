@@ -18,7 +18,7 @@ class NewsItem extends React.Component {
           </Link>
         </span>
         <span className='author'>{'Author: ' + by + ' | '}</span>
-        <span className='time'>{'Published on: ' + new Date(time).toLocaleString()}</span>
+        <span className='time'>{'Published on: ' + new Date(time*1000).toLocaleString()}</span>
       </li>
     );
   }
